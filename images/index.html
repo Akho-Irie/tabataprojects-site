@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabata Projects | Practical Engineering. Reliable Infrastructure.</title>
+<meta name="description" content="Electrical engineering and energy solutions for farms, businesses, commercial properties and industrial clients across South Africa. Pr Tech Eng registered. Serving Gauteng and Limpopo, including Lephalale.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1e1e1e;--navy2:#2a2a2a;--amber:#f47b20;--amber-d:#c95f10;
+  --bg:#f6f7f9;--card:#ffffff;--ink:#26262a;--muted:#5a626c;--line:#e3e8ee;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+h1,h2,h3,h4{font-family:'Barlow Condensed','Barlow',sans-serif;line-height:1.15}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-d);margin-bottom:10px}
+.h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700;color:#fff}
+.h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:700;color:var(--navy)}
+.h3{font-size:1.25rem;font-weight:700;color:var(--navy)}
+.lead{color:var(--muted);font-size:1.06rem;max-width:62ch}
+section{padding:56px 0}
+.alt{background:#fff}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;box-shadow:0 2px 10px rgba(13,33,55,.25)}
+.hbar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.brand .logoimg{width:44px;height:34px;object-fit:contain}
+.brand b{font-size:1.15rem;letter-spacing:.02em}
+.brand small{display:block;font-size:.68rem;color:#b8c6d6;letter-spacing:.12em;text-transform:uppercase;line-height:1.1}
+nav.desktop{display:flex;gap:4px}
+nav.desktop a{color:#dbe5ef;text-decoration:none;font-weight:600;font-size:.92rem;padding:8px 12px;border-radius:6px}
+nav.desktop a:hover{background:var(--navy2);color:#fff}
+nav.desktop a.on{color:var(--amber)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:26px;height:3px;background:#fff;border-radius:2px;margin:5px 0;transition:transform .25s,opacity .25s}
+.burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+nav.mobile{display:none;flex-direction:column;background:var(--navy2);padding:8px 12px 14px}
+nav.mobile a{color:#e8eef5;text-decoration:none;font-weight:600;padding:12px 10px;border-bottom:1px solid rgba(255,255,255,.08)}
+nav.mobile a.on{color:var(--amber)}
+nav.mobile.open{display:flex}
+@media(max-width:900px){nav.desktop{display:none}.burger{display:block}}
+
+/* hero */
+.hero{position:relative;background:#141414;color:#fff;overflow:hidden}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,20,20,.93) 0%,rgba(20,20,20,.72) 55%,rgba(20,20,20,.35) 100%)}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85}
+.hero .inner{position:relative;padding:84px 0 64px}
+.hero p.sub{color:#d6e0ea;max-width:56ch;font-size:1.08rem;margin-top:12px}
+.hero .loc{margin-top:14px;color:#a9bacb;font-size:.92rem}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-block;padding:13px 22px;border-radius:8px;font-weight:700;text-decoration:none;font-size:.98rem}
+.btn.amber{background:var(--amber);color:var(--navy)}
+.btn.amber:hover{background:var(--amber-d);color:#fff}
+.btn.ghost{border:1.5px solid rgba(255,255,255,.45);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+.btn.dark{background:var(--navy);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:40px}
+.stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:16px 18px}
+.stat b{display:block;font-size:1.25rem;color:var(--amber);font-family:'Barlow Condensed'}
+.stat span{font-size:.88rem;color:#cfdae5}
+
+/* cards */
+.grid{display:grid;gap:22px;margin-top:34px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(13,33,55,.06)}
+.card .ph{height:200px;object-fit:cover;width:100%}
+.card .body{padding:20px 22px 24px}
+.card .tag{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-d)}
+.card ul{margin:12px 0 0 18px;color:var(--muted);font-size:.95rem}
+.card ul li{margin:6px 0}
+.note{font-size:.8rem;color:#8a97a5;font-style:italic;margin-top:10px}
+
+/* tables */
+.tblwrap{overflow-x:auto;margin-top:30px;border:1px solid var(--line);border-radius:12px;background:#fff}
+table{border-collapse:collapse;width:100%;min-width:640px}
+th{background:var(--navy);color:#fff;text-align:left;font-family:'Barlow Condensed';font-size:1rem;padding:12px 16px}
+td{padding:12px 16px;border-top:1px solid var(--line);font-size:.94rem;vertical-align:top}
+td:first-child{font-weight:600;color:var(--navy)}
+
+/* value / info blocks */
+.pillbox{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:26px}
+.pill{background:#fff;border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:10px;padding:16px 18px}
+.pill b{color:var(--navy);display:block;margin-bottom:4px}
+.pill p{font-size:.93rem;color:var(--muted)}
+.kv{display:grid;grid-template-columns:200px 1fr;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;margin-top:26px}
+.kv div{padding:13px 18px;border-top:1px solid var(--line);font-size:.95rem}
+.kv div:nth-child(odd){background:#f2f5f8;font-weight:700;color:var(--navy)}
+.kv div:nth-child(even){border-left:1px solid var(--line)}
+.kv div:nth-child(1),.kv div:nth-child(2){border-top:0}
+@media(max-width:640px){.kv{grid-template-columns:1fr}.kv div:nth-child(even){border-left:0}}
+
+/* cta band */
+.band{background:linear-gradient(135deg,#1e1e1e 0%,#2a2a2a 70%);color:#fff;text-align:center;padding:60px 20px;border-top:4px solid var(--amber)}
+.band h2{color:#fff}
+.band p{color:#c8d4e0;margin:10px auto 24px;max-width:56ch}
+details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;margin-top:14px;padding:0 18px}
+details.faq summary{cursor:pointer;font-weight:700;color:var(--navy);padding:16px 0;list-style:none;position:relative}
+details.faq summary::after{content:"+";position:absolute;right:0;font-size:1.3rem;color:var(--amber-d)}
+details.faq[open] summary::after{content:"−"}
+details.faq p{padding:0 0 16px;color:var(--muted);font-size:.95rem}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:30px}
+.cbox{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}
+.cbox small{display:block;text-transform:uppercase;letter-spacing:.1em;font-size:.7rem;color:#8a97a5;font-weight:700;margin-bottom:6px}
+.cbox a{font-weight:700;text-decoration:none;font-size:1.05rem}
+.copy{background:none;border:1px solid var(--line);border-radius:6px;font-size:.75rem;padding:3px 10px;cursor:pointer;color:var(--muted);margin-left:8px}
+.copy:hover{border-color:var(--amber);color:var(--amber-d)}
+.mapbox{margin-top:30px;border-radius:12px;overflow:hidden;border:1px solid var(--line);height:340px}
+.mapbox iframe{width:100%;height:100%;border:0}
+.imgnote{font-size:.78rem;color:#8a97a5;margin-top:8px}
+
+footer{background:#0a1a2b;color:#93a5b8;padding:44px 0 28px;font-size:.92rem}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+footer h4{color:#fff;font-size:1rem;margin-bottom:12px}
+footer a{color:#c3d0dd;text-decoration:none;display:block;margin:6px 0}
+footer a:hover{color:var(--amber)}
+footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.82rem}
+.page{display:none}
+.page.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.center{text-align:center}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hbar">
+    <a class="brand" href="#/home" data-page="home">
+      <img class="logoimg" src="images/logo.png" alt="Tabata Projects logo">
+      <span><b>Tabata Projects</b><small>Power | Energy | Infrastructure</small></span>
+    </a>
+    <nav class="desktop">
+      <a href="#/home" data-page="home">Home</a>
+      <a href="#/about" data-page="about">About Us</a>
+      <a href="#/services" data-page="services">Services</a>
+      <a href="#/projects" data-page="projects">Project Experience</a>
+      <a href="#/areas" data-page="areas">Service Areas</a>
+      <a href="#/company" data-page="company">Company Information</a>
+      <a href="#/contact" data-page="contact">Contact Us</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile" id="mobileNav">
+    <a href="#/home" data-page="home">Home</a>
+    <a href="#/about" data-page="about">About Us</a>
+    <a href="#/services" data-page="services">Services</a>
+    <a href="#/projects" data-page="projects">Project Experience</a>
+    <a href="#/areas" data-page="areas">Service Areas</a>
+    <a href="#/company" data-page="company">Company Information</a>
+    <a href="#/contact" data-page="contact">Contact Us</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section class="page on" id="page-home">
+  <div class="hero">
+    <img class="bg" src="images/banner.jpg" alt="Engineering Solutions. Energy. Infrastructure.">
+    <div class="shade"></div><div class="wrap inner">
+      <span class="eyebrow" style="color:var(--amber)">Engineering Solutions. Energy. Infrastructure.</span>
+      <h1 class="h1">Practical Engineering.<br>Reliable Infrastructure.</h1>
+      <p class="sub">Electrical engineering and energy solutions for farms, businesses, commercial properties and industrial clients across South Africa.</p>
+      <p class="loc">Serving clients across Gauteng and Limpopo, including Lephalale and surrounding areas.</p>
+      <div class="btnrow">
+        <a class="btn amber" href="https://wa.me/27810267360" target="_blank" rel="noopener">Start on WhatsApp</a>
+        <a class="btn ghost" href="#/services" data-page="services">See what we do</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>15+ years</b><span>in engineering, from field surveys to large-scale electrical design</span></div>
+        <div class="stat"><b>Pr Tech Eng</b><span>registered with the Engineering Council of South Africa</span></div>
+        <div class="stat"><b>Concept to handover</b><span>feasibility, design, specification, inspection and commissioning</span></div>
+        <div class="stat"><b>Centurion</b><span>The Reeds, Centurion. Serving clients across Gauteng and Limpopo</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="wrap">
+    <span class="eyebrow">What we do</span>
+    <h2 class="h2">Six disciplines, one accountable engineer</h2>
+    <p class="lead">You deal directly with the registered engineer who designs your system. Where a job needs installation, we work with qualified specialist installers.</p>
+    <div class="grid g3">
+      <div class="card"><img class="ph" src="images/service-energy.jpg" alt="Technician working on solar panels and battery storage"><div class="body"><span class="tag">Energy</span><h3 class="h3">Solar, batteries and standby power</h3><ul><li>Solar PV design and sizing from your real load</li><li>Battery storage and hybrid systems</li><li>Generators and UPS for critical loads</li><li>Load assessments and feasibility studies</li></ul><p class="note">Borehole and irrigation pumps, cold rooms, lodges, workshops and homes.</p></div></div>
+      <div class="card"><img class="ph" src="images/service-electrical.jpg" alt="Electrician working on substation equipment"><div class="body"><span class="tag">Electrical engineering</span><h3 class="h3">MV and LV electrical engineering design</h3><ul><li>MV and LV distribution and reticulation</li><li>Minisubstations and transformers</li><li>Distribution boards, cable and load schedules</li><li>Specifications, drawings and compliance checks (SANS 10142-1)</li></ul><p class="note">New builds, extensions, and supplies that no longer cope with the load.</p></div></div>
+      <div class="card"><img class="ph" src="images/service-lightning.jpg" alt="Lightning protection mast on a farm building during a storm"><div class="body"><span class="tag">Earthing and lightning</span><h3 class="h3">Protection that fits the risk</h3><ul><li>Lightning risk assessment (SANS 10313)</li><li>Earthing and bonding design</li><li>Surge protection for pumps, solar and electronics</li><li>Inspection of existing installations</li></ul><p class="note">Summer thunderstorms hit exposed farms and rural sites hardest.</p></div></div>
+      <div class="card"><img class="ph" src="images/service-security.jpg" alt="Technician installing a CCTV camera at a lodge gate"><div class="body"><span class="tag">Security</span><h3 class="h3">Access control, CCTV and fire detection</h3><ul><li>Access control</li><li>CCTV surveillance</li><li>Fire and smoke detection (SANS 10139)</li><li>Backup power so security stays on</li></ul><p class="note">Lodges, stores, workshops, storage yards and homesteads.</p></div></div>
+      <div class="card"><img class="ph" src="images/service-assets.jpg" alt="Engineer inspecting a transformer in a substation"><div class="body"><span class="tag">Asset management</span><h3 class="h3">Asset management and reliability engineering</h3><ul><li>Asset registers and condition assessments</li><li>Maintenance strategies (RCM and FMECA)</li><li>Reliability and failure-data analysis</li><li>Life-extension and replacement decisions (ISO 55000 principles)</li></ul><p class="note">Plant, substations, standby systems and electrical infrastructure that must not fail.</p></div></div>
+      <div class="card"><img class="ph" src="images/service-financial.jpg" alt="Engineer reviewing project drawings and cost estimates"><div class="body"><span class="tag">Financial and commercial</span><h3 class="h3">Financial and commercial engineering services</h3><ul><li>Project costing, budgets and tender pricing</li><li>Bills of quantities and scope development</li><li>Cash-flow forecasting and feasibility (DCF)</li><li>Business cases for solar and standby investment</li></ul><p class="note">Every figure traces back to a calculation you can check.</p></div></div>
+    </div>
+    <p class="note">Images are illustrations, not photographs of completed projects.</p>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <span class="eyebrow">Industries and clients</span>
+      <h2 class="h2">Who we serve</h2>
+      <div class="pillbox">
+        <div class="pill"><b>Farms and game lodges</b><p>Reliable power for pumps, cold storage, accommodation and fencing, with solar and batteries sized to what you actually run.</p></div>
+        <div class="pill"><b>Villages and households</b><p>Practical, safe installations for homes, spaza shops and small businesses, with clear costs and no jargon.</p></div>
+        <div class="pill"><b>Businesses and contractors</b><p>Design, specification and technical review for workshops, warehouses, yards and industrial support operations.</p></div>
+        <div class="pill"><b>Property owners</b><p>Independent engineering for extensions, tenant changes and upgrades, from the first load assessment to sign-off.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <details class="faq"><summary>Will solar run my borehole pump or cold room?</summary><p>We answer this for your specific setup on a quick call or WhatsApp chat. Send us what you want to run and we will advise.</p></details>
+    <details class="faq"><summary>Do I need approval to install solar?</summary><p>This depends on your supply and municipality. Contact us and we will walk you through the requirements for your site.</p></details>
+    <details class="faq"><summary>Can lightning damage my solar, pumps or electronics?</summary><p>Exposed rural sites are at real risk. We assess your risk and design protection to suit. Send us your location and setup.</p></details>
+    <details class="faq"><summary>Do you do the installation too?</summary><p>Where a job needs installation, we work with qualified specialist installers while we handle the engineering. Ask us about your project.</p></details>
+    <details class="faq" open><summary>What should I send to get started?</summary><p>A recent electricity bill, a photograph of your distribution board, your location pin and a short description of what you want to run or protect.</p></details>
+  </section>
+
+  <div class="band">
+    <h2 class="h2">Ready to talk about your project?</h2>
+    <p>Message Akho Tabata on WhatsApp for the quickest start. Tell us where your project is and what you need.</p>
+    <a class="btn amber" href="https://wa.me/27810267360" target="_blank" rel="noopener">Open WhatsApp</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="page" id="page-about">
+  <section class="wrap">
+    <span class="eyebrow">About Us</span>
+    <h2 class="h2">About Tabata Projects</h2>
+    <p class="lead">Tabata Projects (Pty) Ltd is a South African engineering company focused on electrical engineering, energy solutions and infrastructure development.</p>
+    <p class="lead" style="margin-top:14px">We provide practical engineering services spanning feasibility assessments, design, technical specifications, project support and engineering advisory services.</p>
+    <p class="lead" style="margin-top:14px">Our approach is founded on sound engineering principles, professional integrity and a commitment to delivering solutions that respond to the technical and operational needs of our clients.</p>
+    <p class="lead" style="margin-top:14px">We aim to build lasting relationships by providing reliable engineering support and contributing to the development of sustainable electrical infrastructure.</p>
+    <div class="grid g2">
+      <div class="card"><div class="body"><span class="tag">Our Mission</span><p style="margin-top:8px;color:var(--muted)">To deliver practical, reliable and cost-effective engineering solutions that improve the safety, performance and sustainability of electrical infrastructure. We are committed to technical excellence, professional integrity and building lasting relationships through solutions that respond to our clients' needs.</p></div></div>
+      <div class="card"><div class="body"><span class="tag">Our Vision</span><p style="margin-top:8px;color:var(--muted)">To become a trusted South African engineering and infrastructure solutions company, recognised for technical excellence, innovation and meaningful contribution to the development of the country's energy and infrastructure sectors.</p></div></div>
+    </div>
+    <h3 class="h2" style="margin-top:44px;font-size:1.6rem">Our values</h3>
+    <div class="pillbox">
+      <div class="pill"><b>Integrity</b><p>We act honestly, responsibly and professionally.</p></div>
+      <div class="pill"><b>Technical Excellence</b><p>We apply sound engineering principles and attention to detail.</p></div>
+      <div class="pill"><b>Practical Innovation</b><p>We seek solutions that are effective, sustainable and fit for purpose.</p></div>
+      <div class="pill"><b>Client Commitment</b><p>We value clear communication, reliability and lasting relationships.</p></div>
+      <div class="pill"><b>Continuous Improvement</b><p>We invest in knowledge, skills and better ways of working.</p></div>
+    </div>
+  </section>
+  <div class="band">
+    <h2 class="h2">Work with a registered engineer</h2>
+    <p>Pr Tech Eng registered with ECSA, with 15+ years in engineering from field surveys to large-scale electrical design.</p>
+    <a class="btn amber" href="#/contact" data-page="contact">Contact us</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="page" id="page-services">
+  <section class="wrap">
+    <span class="eyebrow">What we do</span>
+    <h2 class="h2">Six disciplines, one accountable engineer</h2>
+    <p class="lead">You deal directly with the registered engineer who designs your system. Where a job needs installation, we work with qualified specialist installers.</p>
+    <div class="grid g2" style="margin-top:34px">
+      <div class="card"><img class="ph" src="images/service-energy.jpg" alt="Technician working on solar panels and battery storage"><div class="body"><span class="tag">Energy</span><h3 class="h3">Solar, batteries and standby power</h3><ul><li>Solar PV design and sizing from your real load</li><li>Battery storage and hybrid systems</li><li>Generators and UPS for critical loads</li><li>Load assessments and feasibility studies</li></ul><p class="note">Borehole and irrigation pumps, cold rooms, lodges, workshops and homes.</p></div></div>
+      <div class="card"><img class="ph" src="images/service-electrical.jpg" alt="Electrician working on substation equipment"><div class="body"><span class="tag">Electrical engineering</span><h3 class="h3">MV and LV electrical engineering design</h3><ul><li>MV and LV distribution and reticulation</li><li>Minisubstations and transformers</li><li>Distribution boards, cable and load schedules</li><li>Specifications, drawings and compliance checks (SANS 10142-1)</li></ul><p class="note">New builds, extensions, and supplies that no longer cope with the load.</p></div></div>
+      <div class="card"><img class="ph" src="images/service-lightning.jpg" alt="Lightning protection mast on a farm building during a storm"><div class="body"><span class="tag">Earthing and lightning</span><h3 class="h3">Protection that fits the risk</h3><ul><li>Lightning risk assessment (SANS 10313)</li><li>Earthing and bonding design</li><li>Surge protection for pumps, solar and electronics</li><li>Inspection of existing installations</li></ul><p class="note">Summer thunderstorms hit exposed farms and rural sites hardest.</p></div></div>
+      <div class="card"><img class="ph" src="images/service-security.jpg" alt="Technician installing a CCTV camera at a lodge gate"><div class="body"><span class="tag">Security</span><h3 class="h3">Access control, CCTV and fire detection</h3><ul><li>Access control</li><li>CCTV surveillance</li><li>Fire and smoke detection (SANS 10139)</li><li>Backup power so security stays on</li></ul><p class="note">Lodges, stores, workshops, storage yards and homesteads.</p></div></div>
+      <div class="card"><img class="ph" src="images/service-assets.jpg" alt="Engineer inspecting a transformer in a substation"><div class="body"><span class="tag">Asset management</span><h3 class="h3">Asset management and reliability engineering</h3><ul><li>Asset registers and condition assessments</li><li>Maintenance strategies (RCM and FMECA)</li><li>Reliability and failure-data analysis</li><li>Life-extension and replacement decisions (ISO 55000 principles)</li></ul><p class="note">Plant, substations, standby systems and electrical infrastructure that must not fail.</p></div></div>
+      <div class="card"><img class="ph" src="images/service-financial.jpg" alt="Engineer reviewing project drawings and cost estimates"><div class="body"><span class="tag">Financial and commercial</span><h3 class="h3">Financial and commercial engineering services</h3><ul><li>Project costing, budgets and tender pricing</li><li>Bills of quantities and scope development</li><li>Cash-flow forecasting and feasibility (DCF)</li><li>Business cases for solar and standby investment</li></ul><p class="note">Every figure traces back to a calculation you can check.</p></div></div>
+    </div>
+    <p class="note">Images are illustrations, not photographs of completed projects.</p>
+  </section>
+  <div class="band">
+    <h2 class="h2">Not sure which service you need?</h2>
+    <p>Send us a photo of your distribution board and a short description. We will tell you where to start.</p>
+    <a class="btn amber" href="https://wa.me/27810267360" target="_blank" rel="noopener">Open WhatsApp</a>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="page" id="page-projects">
+  <section class="wrap">
+    <span class="eyebrow">Project Experience</span>
+    <h2 class="h2">Selected project experience</h2>
+    <p class="lead">Large commercial, industrial and residential electrical projects, from feasibility and load assessments through design, specification, inspection and handover.</p>
+    <p class="note">Project descriptions do not name clients. Images are illustrations, not photographs of the projects.</p>
+    <div class="grid g3">
+      <div class="card"><img class="ph" src="images/project-warehouse.jpg" alt="Illustration of a large distribution centre with loading docks"><div class="body"><span class="tag">Commercial and industrial</span><h3 class="h3">Commercial distribution centre</h3><p style="font-weight:700;color:var(--amber-d);margin:4px 0">100 000 m² distribution centre</p><p style="color:var(--muted);font-size:.93rem"><b style="color:var(--navy)">Scope:</b> Power and lighting, backup generators, UPS, solar PV, smoke detection, data reticulation.<br><b style="color:var(--navy)">Involvement:</b> Design and technical documentation.</p></div></div>
+      <div class="card"><img class="ph" src="images/project-residential.jpg" alt="Illustration of a modern residential apartment development"><div class="body"><span class="tag">Residential</span><h3 class="h3">Residential development</h3><p style="font-weight:700;color:var(--amber-d);margin:4px 0">1 100 apartments</p><p style="color:var(--muted);font-size:.93rem"><b style="color:var(--navy)">Scope:</b> 800 kVA minisub, 500 kVA generator, CCTV, security, earthing and lightning protection.</p></div></div>
+      <div class="card"><img class="ph" src="images/project-solar.jpg" alt="Illustration of rooftop solar with battery storage"><div class="body"><span class="tag">Commercial</span><h3 class="h3">Commercial solar with storage</h3><p style="font-weight:700;color:var(--amber-d);margin:4px 0">240 kW / 240 kWh solar and storage</p><p style="color:var(--muted);font-size:.93rem"><b style="color:var(--navy)">Scope:</b> Solar PV with battery energy storage.<br><b style="color:var(--navy)">Also:</b> 120 kW / 120 kWh and three grid-tied systems of 162, 200 and 300 kW.</p></div></div>
+    </div>
+    <h3 class="h3" style="margin-top:44px">More project scopes</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Project</th><th>Size</th><th>Electrical scope</th></tr></thead>
+        <tbody>
+          <tr><td>Spec-build warehouse</td><td>23 500 m²</td><td>2 × 400 kVA generators, 300 kW solar PV, access control, CCTV</td></tr>
+          <tr><td>Spec warehouse</td><td>17 600 m²</td><td>500 kVA minisub, 630 kVA generator, 270 kW solar PV, security, smoke detection, earthing and lightning protection</td></tr>
+          <tr><td>Warehouse</td><td>150 kVA · 80 kW</td><td>Generator system, solar PV, earthing and lightning protection, smoke detection</td></tr>
+          <tr><td>Truck workshop and wash</td><td>1 000 kVA minisub</td><td>20 kVA UPS, power and lighting, smoke detection</td></tr>
+          <tr><td>Grid-tied commercial solar</td><td>300 · 200 · 162 kW</td><td>Three separate grid-tied solar PV systems</td></tr>
+          <tr><td>Lighting replacement</td><td>Warehouse site</td><td>LED high-bay, office and basement lighting</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Scopes are summarised without client names.</p>
+  </section>
+  <div class="band">
+    <h2 class="h2">Have a similar project in mind?</h2>
+    <p>From a single pump to a 100 000 m² distribution centre, the process starts the same way: tell us what you run.</p>
+    <a class="btn amber" href="https://wa.me/27810267360" target="_blank" rel="noopener">Start on WhatsApp</a>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="page" id="page-areas">
+  <section class="wrap">
+    <span class="eyebrow">Service Areas</span>
+    <h2 class="h2">Serving Gauteng and Limpopo</h2>
+    <p class="lead">Our business location is The Reeds, Centurion, Gauteng, South Africa. We serve clients across Gauteng and Limpopo, including Lephalale and surrounding areas.</p>
+    <div class="pillbox">
+      <div class="pill"><b>Centurion</b><p>Our home base in Gauteng.</p></div>
+      <div class="pill"><b>Lephalale</b><p>A core focus area, along with Onverwacht and Marapong.</p></div>
+      <div class="pill"><b>Vaalwater and Marken</b><p>Farms, lodges and villages along the Waterberg routes.</p></div>
+      <div class="pill"><b>Steenbokpan</b><p>Serving the surrounding farming areas.</p></div>
+      <div class="pill"><b>Modimolle and Mokopane</b><p>Towns along the N1 corridor where we are most active.</p></div>
+      <div class="pill"><b>Further afield</b><p>We take on projects across Gauteng, Limpopo and beyond.</p></div>
+    </div>
+    <p class="lead" style="margin-top:24px">Lephalale and the towns along the N1 corridor are where we are most active at the moment. Farms, lodges, villages and businesses there are part of our current focus.</p>
+  </section>
+  <div class="band">
+    <h2 class="h2">Is your area covered?</h2>
+    <p>Send us your location pin on WhatsApp and we will confirm how we can help.</p>
+    <a class="btn amber" href="https://wa.me/27810267360" target="_blank" rel="noopener">Send your location pin</a>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section class="page" id="page-company">
+  <section class="wrap">
+    <span class="eyebrow">Company Information</span>
+    <h2 class="h2">Company information</h2>
+    <p class="lead">Registration details, B-BBEE information and professional credentials for Tabata Projects (Pty) Ltd.</p>
+
+    <h3 class="h3" style="margin-top:34px">Company registration</h3>
+    <div class="kv">
+      <div>Registered name</div><div>Tabata Projects (Pty) Ltd</div>
+      <div>Registration no.</div><div>2025/819918/07 (CIPC company registration number)</div>
+      <div>Enterprise type</div><div>Private Company</div>
+      <div>Registered</div><div>20 October 2025</div>
+      <div>Business status</div><div>In Business</div>
+      <div>Location</div><div>The Reeds, Centurion, Gauteng, South Africa</div>
+    </div>
+
+    <h3 class="h3" style="margin-top:38px">B-BBEE status and ownership</h3>
+    <p class="lead">Previous B-BBEE Status: Level 1 Contributor, 135% Procurement Recognition.</p>
+    <p class="lead" style="margin-top:10px"><b style="color:var(--navy)">Certificate expired: 18 October 2026.</b> This is historical certificate information. An updated certificate or affidavit is required to confirm the company's current B-BBEE status.</p>
+    <div class="kv">
+      <div>Black ownership</div><div>100%</div>
+      <div>White ownership</div><div>0%</div>
+      <div>Certificate type</div><div>Exempted Micro Enterprise</div>
+      <div>Certificate no.</div><div>9445945999</div>
+      <div>Date of issue</div><div>19 October 2025</div>
+      <div>Expiry date</div><div>18 October 2026</div>
+      <div>Issued by</div><div>Companies and Intellectual Property Commission (CIPC), on behalf of the Department of Trade, Industry and Competition (the dtic)</div>
+    </div>
+
+    <h3 class="h3" style="margin-top:38px">Professional credentials</h3>
+    <div class="kv">
+      <div>Professional registration</div><div>Professional Engineering Technologist (Pr Tech Eng), registered with the Engineering Council of South Africa (ECSA)</div>
+      <div>Qualifications</div><div>BTech Electrical Engineering · National Diploma in Electrical Engineering · Master of Engineering Management (in progress)</div>
+    </div>
+
+    <h3 class="h3" style="margin-top:38px">Standards we design to</h3>
+    <div class="pillbox">
+      <div class="pill"><b>SANS 10142-1</b><p>Wiring of premises, the Code of Practice for electrical installations.</p></div>
+      <div class="pill"><b>SANS 10313</b><p>Protection against lightning.</p></div>
+      <div class="pill"><b>SANS 10139</b><p>Fire detection and alarm systems.</p></div>
+      <div class="pill"><b>SANS 780</b><p>Photovoltaic systems.</p></div>
+      <div class="pill"><b>NRS 097</b><p>Grid interconnection of embedded generation.</p></div>
+    </div>
+    <p class="lead" style="margin-top:20px">Also working in power-system analysis, BIM and digital engineering practice, with a focus on clear technical reports you can act on.</p>
+  </section>
+  <div class="band">
+    <h2 class="h2">Need our credentials for a tender pack?</h2>
+    <p>Ask us on WhatsApp or email and we will send what you need.</p>
+    <a class="btn amber" href="#/contact" data-page="contact">Contact us</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="page" id="page-contact">
+  <section class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2 class="h2">Contact us</h2>
+    <p class="lead">Message Akho Tabata on WhatsApp for the quickest start, or use the contact details here. Tell us where your project is and what you need.</p>
+    <div class="btnrow">
+      <a class="btn amber" href="https://wa.me/27810267360" target="_blank" rel="noopener">Open WhatsApp</a>
+      <a class="btn dark" href="https://www.linkedin.com/company/tabata-projects" target="_blank" rel="noopener">Follow on LinkedIn</a>
+    </div>
+    <h3 class="h3" style="margin-top:34px">To help us understand your requirements, please send us:</h3>
+    <ul style="margin:12px 0 0 20px;color:var(--muted)">
+      <li>A recent electricity bill.</li>
+      <li>A photograph of your distribution board.</li>
+      <li>Your location pin and a short description of what you want to run or protect.</li>
+    </ul>
+    <div class="contact-grid">
+      <div class="cbox"><small>Mobile</small><a href="tel:+27810267360">+27 81 026 7360</a><button class="copy" data-copy="+27 81 026 7360">Copy</button></div>
+      <div class="cbox"><small>Office</small><a href="tel:+27126613999">(012) 661 3999</a><button class="copy" data-copy="(012) 661 3999">Copy</button></div>
+      <div class="cbox"><small>Email</small><a href="mailto:tabataprojects@outlook.com">tabataprojects@outlook.com</a><button class="copy" data-copy="tabataprojects@outlook.com">Copy</button></div>
+      <div class="cbox"><small>Teams</small><a href="mailto:tabataprojects@outlook.com">tabataprojects@outlook.com</a></div>
+      <div class="cbox"><small>Location</small><a>The Reeds, Centurion, Gauteng, South Africa</a></div>
+    </div>
+    <div class="mapbox">
+      <iframe title="Map of service area, Gauteng and Limpopo" src="https://www.openstreetmap.org/export/embed.html?bbox=27.4%2C-26.4%2C29.9%2C-23.4&amp;layer=mapnik" loading="lazy"></iframe>
+    </div>
+    <p class="imgnote">Map: OpenStreetMap contributors.</p>
+  </section>
+  <div class="band">
+    <h2 class="h2">Practical Engineering. Reliable Infrastructure.</h2>
+    <p>Electrical engineering and energy solutions from The Reeds, Centurion, Gauteng.</p>
+    <a class="btn amber" href="https://wa.me/27810267360" target="_blank" rel="noopener">WhatsApp us</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Tabata Projects</h4>
+        <p>Practical Engineering. Reliable Infrastructure. Electrical engineering and energy solutions from The Reeds, Centurion, Gauteng.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="#/home" data-page="home">About Us</a>
+        <a href="#/services" data-page="services">Services</a>
+        <a href="#/projects" data-page="projects">Project Experience</a>
+        <a href="#/areas" data-page="areas">Service Areas</a>
+        <a href="#/company" data-page="company">Company Information</a>
+        <a href="#/contact" data-page="contact">Contact Us</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+27810267360">+27 81 026 7360</a>
+        <a href="tel:+27126613999">(012) 661 3999</a>
+        <a href="mailto:tabataprojects@outlook.com">tabataprojects@outlook.com</a>
+        <a href="https://www.linkedin.com/company/tabata-projects" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://wa.me/27810267360" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 Tabata Projects (Pty) Ltd · Reg. 2025/819918/07</span>
+      <span>Power | Energy | Infrastructure</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var pages=['home','about','services','projects','areas','company','contact'];
+  var burger=document.getElementById('burger');
+  var mobileNav=document.getElementById('mobileNav');
+  burger.addEventListener('click',function(){
+    var open=mobileNav.classList.toggle('open');
+    burger.classList.toggle('open',open);
+    burger.setAttribute('aria-expanded',open?'true':'false');
+  });
+  function go(p,scroll){
+    if(pages.indexOf(p)<0)p='home';
+    var els=document.querySelectorAll('.page');
+    for(var i=0;i<els.length;i++){els[i].classList.remove('on');}
+    document.getElementById('page-'+p).classList.add('on');
+    var links=document.querySelectorAll('nav a[data-page]');
+    for(var j=0;j<links.length;j++){
+      links[j].classList.toggle('on',links[j].getAttribute('data-page')===p);
+    }
+    mobileNav.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    if(scroll!==false){window.scrollTo(0,0);}
+  }
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    while(t&&t!==document.body){
+      if(t.getAttribute&&t.getAttribute('data-page')){
+        e.preventDefault();
+        var p=t.getAttribute('data-page');
+        if(location.hash!=='#/'+p){location.hash='#/'+p;}
+        go(p);
+        return;
+      }
+      if(t.classList&&t.classList.contains('copy')){
+        var txt=t.getAttribute('data-copy');
+        if(navigator.clipboard){navigator.clipboard.writeText(txt);t.textContent='Copied';setTimeout(function(){t.textContent='Copy';},1500);}
+        return;
+      }
+      t=t.parentNode;
+    }
+  });
+  function fromHash(){
+    var p=(location.hash||'').replace(/^#\//,'');
+    go(p,false);
+  }
+  window.addEventListener('hashchange',fromHash);
+  fromHash();
+})();
+</script>
+</body>
+</html>
