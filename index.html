@@ -54,6 +54,10 @@ nav.mobile.open{display:flex}
 /* hero */
 .hero{position:relative;background:#141414;color:#fff;overflow:hidden}
 .hero .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,20,20,.93) 0%,rgba(20,20,20,.72) 55%,rgba(20,20,20,.35) 100%)}
+.hero-brand{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.hero-brand img{width:78px;height:auto}
+.hero-brand b{display:block;font-family:'Barlow Condensed';font-size:1.6rem;color:#fff;letter-spacing:.03em;line-height:1.1}
+.hero-brand span{display:block;color:var(--amber);letter-spacing:.28em;text-transform:uppercase;font-size:.68rem;font-weight:600;margin-top:3px}
 .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85}
 .hero .inner{position:relative;padding:84px 0 64px}
 .hero p.sub{color:#d6e0ea;max-width:56ch;font-size:1.08rem;margin-top:12px}
@@ -173,10 +177,11 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-t
   <div class="hero">
     <img class="bg" src="images/banner.jpg" alt="Engineering Solutions. Energy. Infrastructure.">
     <div class="shade"></div><div class="wrap inner">
+      <div class="hero-brand"><img src="images/logo.png" alt="Tabata Projects TP logo"><div><b>Tabata Projects</b><span>Power | Energy | Infrastructure</span></div></div>
       <span class="eyebrow" style="color:var(--amber)">Engineering Solutions. Energy. Infrastructure.</span>
       <h1 class="h1">Practical Engineering.<br>Reliable Infrastructure.</h1>
       <p class="sub">Electrical engineering and energy solutions for farms, businesses, commercial properties and industrial clients across South Africa.</p>
-      <p class="loc">Serving clients across Gauteng and Limpopo, including Lephalale and surrounding areas.</p>
+      <p class="loc">Serving clients across Southern Africa, with a strong footprint in Gauteng and Limpopo, including Lephalale and surrounding areas.</p>
       <div class="btnrow">
         <a class="btn amber" href="https://wa.me/27810267360" target="_blank" rel="noopener">Start on WhatsApp</a>
         <a class="btn ghost" href="#/services" data-page="services">See what we do</a>
@@ -185,23 +190,23 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-t
         <div class="stat"><b>15+ years</b><span>in engineering, from field surveys to large-scale electrical design</span></div>
         <div class="stat"><b>Pr Tech Eng</b><span>registered with the Engineering Council of South Africa</span></div>
         <div class="stat"><b>Concept to handover</b><span>feasibility, design, specification, inspection and commissioning</span></div>
-        <div class="stat"><b>Centurion</b><span>The Reeds, Centurion. Serving clients across Gauteng and Limpopo</span></div>
+        <div class="stat"><b>Centurion</b><span>The Reeds, Centurion. Serving clients across Southern Africa</span></div>
       </div>
     </div>
   </div>
 
   <section class="wrap">
     <span class="eyebrow">What we do</span>
-    <h2 class="h2">Six disciplines, one accountable engineer</h2>
+    <h2 class="h2">Seven disciplines, one accountable engineer</h2>
     <p class="lead">You deal directly with the registered engineer who designs your system. Where a job needs installation, we work with qualified specialist installers.</p>
     <div class="grid g3">
       <div class="card"><img class="ph" src="images/service-energy.jpg" alt="Technician working on solar panels and battery storage"><div class="body"><span class="tag">Energy</span><h3 class="h3">Solar, batteries and standby power</h3><ul><li>Solar PV design and sizing from your real load</li><li>Battery storage and hybrid systems</li><li>Generators and UPS for critical loads</li><li>Load assessments and feasibility studies</li></ul><p class="note">Borehole and irrigation pumps, cold rooms, lodges, workshops and homes.</p></div></div>
       <div class="card"><img class="ph" src="images/service-electrical.jpg" alt="Electrician working on substation equipment"><div class="body"><span class="tag">Electrical engineering</span><h3 class="h3">MV and LV electrical engineering design</h3><ul><li>MV and LV distribution and reticulation</li><li>Minisubstations and transformers</li><li>Distribution boards, cable and load schedules</li><li>Specifications, drawings and compliance checks (SANS 10142-1)</li></ul><p class="note">New builds, extensions, and supplies that no longer cope with the load.</p></div></div>
       <div class="card"><img class="ph" src="images/service-lightning.jpg" alt="Lightning protection mast on a farm building during a storm"><div class="body"><span class="tag">Earthing and lightning</span><h3 class="h3">Protection that fits the risk</h3><ul><li>Lightning risk assessment (SANS 10313)</li><li>Earthing and bonding design</li><li>Surge protection for pumps, solar and electronics</li><li>Inspection of existing installations</li></ul><p class="note">Summer thunderstorms hit exposed farms and rural sites hardest.</p></div></div>
-      <div class="card"><img class="ph" src="images/service-security.jpg" alt="Technician installing a CCTV camera at a lodge gate"><div class="body"><span class="tag">Security</span><h3 class="h3">Access control, CCTV and fire detection</h3><ul><li>Access control</li><li>CCTV surveillance</li><li>Fire and smoke detection (SANS 10139)</li><li>Backup power so security stays on</li></ul><p class="note">Lodges, stores, workshops, storage yards and homesteads.</p></div></div>
+      <div class="card"><img class="ph" src="images/service-security.jpg" alt="Technician installing a CCTV camera at a lodge gate"><div class="body"><span class="tag">Infrastructure</span><h3 class="h3">Access control, CCTV and fire detection</h3><ul><li>Access control</li><li>CCTV surveillance</li><li>Fire and smoke detection (SANS 10139)</li><li>Backup power so security stays on</li></ul><p class="note">Lodges, stores, workshops, storage yards and homesteads.</p></div></div>
       <div class="card"><img class="ph" src="images/service-assets.jpg" alt="Engineer inspecting a transformer in a substation"><div class="body"><span class="tag">Asset management</span><h3 class="h3">Asset management and reliability engineering</h3><ul><li>Asset registers and condition assessments</li><li>Maintenance strategies (RCM and FMECA)</li><li>Reliability and failure-data analysis</li><li>Life-extension and replacement decisions (ISO 55000 principles)</li></ul><p class="note">Plant, substations, standby systems and electrical infrastructure that must not fail.</p></div></div>
       <div class="card"><img class="ph" src="images/service-financial.jpg" alt="Engineer reviewing project drawings and cost estimates"><div class="body"><span class="tag">Financial and commercial</span><h3 class="h3">Financial and commercial engineering services</h3><ul><li>Project costing, budgets and tender pricing</li><li>Bills of quantities and scope development</li><li>Cash-flow forecasting and feasibility (DCF)</li><li>Business cases for solar and standby investment</li></ul><p class="note">Every figure traces back to a calculation you can check.</p></div></div>
-    </div>
+    </div><div class="card"><img class="ph" src="images/service-ev.jpg" alt="Electrician installing an EV charging station at a commercial building"><div class="body"><span class="tag">EV charging</span><h3 class="h3">EV charging installations</h3><ul><li>Home, fleet and commercial charging points</li><li>Load assessments before you buy</li><li>Installation compliance and certification</li><li>Integration with solar and backup power</li></ul><p class="note">From a single wall charger to full fleet charging infrastructure.</p></div></div>
     <p class="note">Images are illustrations, not photographs of completed projects.</p>
   </section>
 
@@ -266,16 +271,16 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-t
 <section class="page" id="page-services">
   <section class="wrap">
     <span class="eyebrow">What we do</span>
-    <h2 class="h2">Six disciplines, one accountable engineer</h2>
+    <h2 class="h2">Seven disciplines, one accountable engineer</h2>
     <p class="lead">You deal directly with the registered engineer who designs your system. Where a job needs installation, we work with qualified specialist installers.</p>
     <div class="grid g2" style="margin-top:34px">
       <div class="card"><img class="ph" src="images/service-energy.jpg" alt="Technician working on solar panels and battery storage"><div class="body"><span class="tag">Energy</span><h3 class="h3">Solar, batteries and standby power</h3><ul><li>Solar PV design and sizing from your real load</li><li>Battery storage and hybrid systems</li><li>Generators and UPS for critical loads</li><li>Load assessments and feasibility studies</li></ul><p class="note">Borehole and irrigation pumps, cold rooms, lodges, workshops and homes.</p></div></div>
       <div class="card"><img class="ph" src="images/service-electrical.jpg" alt="Electrician working on substation equipment"><div class="body"><span class="tag">Electrical engineering</span><h3 class="h3">MV and LV electrical engineering design</h3><ul><li>MV and LV distribution and reticulation</li><li>Minisubstations and transformers</li><li>Distribution boards, cable and load schedules</li><li>Specifications, drawings and compliance checks (SANS 10142-1)</li></ul><p class="note">New builds, extensions, and supplies that no longer cope with the load.</p></div></div>
       <div class="card"><img class="ph" src="images/service-lightning.jpg" alt="Lightning protection mast on a farm building during a storm"><div class="body"><span class="tag">Earthing and lightning</span><h3 class="h3">Protection that fits the risk</h3><ul><li>Lightning risk assessment (SANS 10313)</li><li>Earthing and bonding design</li><li>Surge protection for pumps, solar and electronics</li><li>Inspection of existing installations</li></ul><p class="note">Summer thunderstorms hit exposed farms and rural sites hardest.</p></div></div>
-      <div class="card"><img class="ph" src="images/service-security.jpg" alt="Technician installing a CCTV camera at a lodge gate"><div class="body"><span class="tag">Security</span><h3 class="h3">Access control, CCTV and fire detection</h3><ul><li>Access control</li><li>CCTV surveillance</li><li>Fire and smoke detection (SANS 10139)</li><li>Backup power so security stays on</li></ul><p class="note">Lodges, stores, workshops, storage yards and homesteads.</p></div></div>
+      <div class="card"><img class="ph" src="images/service-security.jpg" alt="Technician installing a CCTV camera at a lodge gate"><div class="body"><span class="tag">Infrastructure</span><h3 class="h3">Access control, CCTV and fire detection</h3><ul><li>Access control</li><li>CCTV surveillance</li><li>Fire and smoke detection (SANS 10139)</li><li>Backup power so security stays on</li></ul><p class="note">Lodges, stores, workshops, storage yards and homesteads.</p></div></div>
       <div class="card"><img class="ph" src="images/service-assets.jpg" alt="Engineer inspecting a transformer in a substation"><div class="body"><span class="tag">Asset management</span><h3 class="h3">Asset management and reliability engineering</h3><ul><li>Asset registers and condition assessments</li><li>Maintenance strategies (RCM and FMECA)</li><li>Reliability and failure-data analysis</li><li>Life-extension and replacement decisions (ISO 55000 principles)</li></ul><p class="note">Plant, substations, standby systems and electrical infrastructure that must not fail.</p></div></div>
       <div class="card"><img class="ph" src="images/service-financial.jpg" alt="Engineer reviewing project drawings and cost estimates"><div class="body"><span class="tag">Financial and commercial</span><h3 class="h3">Financial and commercial engineering services</h3><ul><li>Project costing, budgets and tender pricing</li><li>Bills of quantities and scope development</li><li>Cash-flow forecasting and feasibility (DCF)</li><li>Business cases for solar and standby investment</li></ul><p class="note">Every figure traces back to a calculation you can check.</p></div></div>
-    </div>
+    </div><div class="card"><img class="ph" src="images/service-ev.jpg" alt="Electrician installing an EV charging station at a commercial building"><div class="body"><span class="tag">EV charging</span><h3 class="h3">EV charging installations</h3><ul><li>Home, fleet and commercial charging points</li><li>Load assessments before you buy</li><li>Installation compliance and certification</li><li>Integration with solar and backup power</li></ul><p class="note">From a single wall charger to full fleet charging infrastructure.</p></div></div>
     <p class="note">Images are illustrations, not photographs of completed projects.</p>
   </section>
   <div class="band">
@@ -324,17 +329,17 @@ footer .base{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-t
 <section class="page" id="page-areas">
   <section class="wrap">
     <span class="eyebrow">Service Areas</span>
-    <h2 class="h2">Serving Gauteng and Limpopo</h2>
-    <p class="lead">Our business location is The Reeds, Centurion, Gauteng, South Africa. We serve clients across Gauteng and Limpopo, including Lephalale and surrounding areas.</p>
+    <h2 class="h2">Serving Southern Africa</h2>
+    <p class="lead">Our business location is The Reeds, Centurion, Gauteng, South Africa. We serve clients across Southern Africa, with a strong footprint in Gauteng and Limpopo.</p>
     <div class="pillbox">
       <div class="pill"><b>Centurion</b><p>Our home base in Gauteng.</p></div>
       <div class="pill"><b>Lephalale</b><p>A core focus area, along with Onverwacht and Marapong.</p></div>
       <div class="pill"><b>Vaalwater and Marken</b><p>Farms, lodges and villages along the Waterberg routes.</p></div>
       <div class="pill"><b>Steenbokpan</b><p>Serving the surrounding farming areas.</p></div>
       <div class="pill"><b>Modimolle and Mokopane</b><p>Towns along the N1 corridor where we are most active.</p></div>
-      <div class="pill"><b>Further afield</b><p>We take on projects across Gauteng, Limpopo and beyond.</p></div>
+      <div class="pill"><b>Southern Africa</b><p>We take on projects across the region and beyond.</p></div>
     </div>
-    <p class="lead" style="margin-top:24px">Lephalale and the towns along the N1 corridor are where we are most active at the moment. Farms, lodges, villages and businesses there are part of our current focus.</p>
+    <p class="lead" style="margin-top:24px">Lephalale and the towns along the N1 corridor are where we are most active at the moment, and this remains our home base. Farms, lodges, villages and businesses there are part of our current focus, wherever else the work takes us.</p>
   </section>
   <div class="band">
     <h2 class="h2">Is your area covered?</h2>
